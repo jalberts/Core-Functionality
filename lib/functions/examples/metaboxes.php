@@ -5,7 +5,7 @@
  * This file registers any custom metaboxes
  *
  * @package      Core_Functionality
- * @since        1.0.1
+ * @since        0.1.0
  * @link         https://github.com/jalberts/Core-Functionality
  * @author       Joe Alberts <jra@umich.edu>
  * @copyright    Copyright (c) 2013, Joe Alberts
@@ -292,7 +292,7 @@ add_filter( 'cmb_meta_boxes', 'cmb_directory_metaboxes' );
 
 /**
  * Initialize Metabox Class
- * @since 1.0.1
+ * @since 0.1.0
  * see /lib/metabox/example-functions.php for more information
  *
  * This is not working with the humanmade fork. Investigate further later.
