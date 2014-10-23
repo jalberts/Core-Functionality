@@ -1,0 +1,4 @@
+general.php merge=ours
+metaboxes.php merge=ours
+post-types.php merge=ours
+taxonomies.php merge=ours
