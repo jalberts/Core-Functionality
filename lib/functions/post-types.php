@@ -16,14 +16,14 @@
 //-- For comprehensive examples, see examples/post-types.php
 
 /** 
- * Create Directory post type
+ * Create People (a directory) post type
  * @author Joe Alberts <jra@umich.edu>
  * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  */
 
 // Register CPT
-function jra_register_directory_post_type() {
+function jra_register_people_post_type() {
 	$labels = array(
 		'name'               => _x( 'People', 'post type general name' ),
 		'singular_name'      => _x( 'Person', 'post type singular name' ),
@@ -42,7 +42,7 @@ function jra_register_directory_post_type() {
 
 	$args = array(
 		'labels' => $labels,
-		'description' => 'All people associated with the CMCD.',
+		'description' => 'All people associated with the PRC.',
 		'public' => true,
 		'exclude_from_search' => false,
 		'publicly_queryable' => true,
@@ -65,17 +65,17 @@ function jra_register_directory_post_type() {
 		'can_export' => true,
 	);
 	
-	register_post_type( 'directory', $args );
+	register_post_type( 'people', $args );
 	
 }
-add_action( 'init', 'jra_register_directory_post_type' );
+add_action( 'init', 'jra_register_people_post_type' );
 
 // Update Messages customization
 // Adds filter to ensure the CPT name is displayed appropriately when user updates one.
-function jra_directory_updated_messages( $messages ) {
+function jra_people_updated_messages( $messages ) {
   global $post, $post_ID;
 
-  $messages['directory'] = array(
+  $messages['people'] = array(
     0 => '', // Unused. Messages start at index 1.
     1 => sprintf( __('Person updated. <a href="%s">View person</a>'), esc_url( get_permalink($post_ID) ) ),
     2 => __('Custom field updated.'),
@@ -94,16 +94,16 @@ function jra_directory_updated_messages( $messages ) {
 
   return $messages;
 }
-add_filter( 'post_updated_messages', 'jra_directory_updated_messages' );
+add_filter( 'post_updated_messages', 'jra_people_updated_messages' );
 
 // Change title text
-function jra_directory_title_text( $title) {
+function jra_people_title_text( $title) {
 	$screen = get_current_screen();
  
-	if  ( 'directory' == $screen->post_type ) {
+	if  ( 'people' == $screen->post_type ) {
 		$title = 'Full Name and Honorific';
 	}
 	
 	return $title;
 }
-add_filter( 'enter_title_here', 'jra_directory_title_text' );
+add_filter( 'enter_title_here', 'jra_people_title_text' );
