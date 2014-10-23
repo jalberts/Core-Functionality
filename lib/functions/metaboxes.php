@@ -26,7 +26,7 @@
 
 /**
  * Initialize Metabox Class
- * @since 1.0.1
+ * @since 0.1.0
  * see /lib/metabox/example-functions.php for more information
  *
  * This is not working with the humanmade fork. Investigate further later.
