@@ -20,12 +20,12 @@
  * Create Metaboxes
  * @author Joe Alberts <jra@umich.edu>
  * @since 1.0.1
- * @cpt Directory
+ * @cpt People
  */
 
-function cmb_directory_metaboxes( array $meta_boxes ) {
+function cmb_people_metaboxes( array $meta_boxes ) {
 
-        $prefix = '_cmcd_directory-';
+        $prefix = '_prc_people-';
 
 // Personal (Bio) Info fields
         $bio_fields = array(
@@ -85,11 +85,11 @@ function cmb_directory_metaboxes( array $meta_boxes ) {
         // Metabox declaration
         $meta_boxes[] = array(
                 'title' => 'Personal Info',
-                'pages' => 'directory',
+                'pages' => 'people',
                 'fields' => $bio_fields
         );
 
 return $meta_boxes;
 
 }
-add_filter( 'cmb_meta_boxes', 'cmb_directory_metaboxes' );
+add_filter( 'cmb_meta_boxes', 'cmb_people_metaboxes' );
