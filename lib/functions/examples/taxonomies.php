@@ -5,7 +5,7 @@
  * This file registers any custom taxonomies.
  *
  * @package      Core_Functionality
- * @since        1.0.1
+ * @since        0.1.0
  * @link         https://github.com/jalberts/Core-Functionality
  * @author       Joe Alberts <jra@umich.edu>
  * @copyright    Copyright (c) 2013, Joe Alberts
@@ -15,7 +15,7 @@
 /** 
  * Create Program Type taxonomy 
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
  * @cpt Programs
  */
@@ -50,7 +50,7 @@ add_action( 'init', 'jra_register_program_type_taxonomy' );
 /** 
  * Create Program Tags taxonomy
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
  * @cpt Programs
  */
@@ -84,7 +84,7 @@ add_action( 'init', 'jra_register_featured_programs_taxonomy' );
 /** 
  * Create Affiliation taxonomy
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
  * @cpt Directory
  */
@@ -118,7 +118,7 @@ add_action( 'init', 'jra_register_dir_affiliation_taxonomy' );
 /** 
  * Create Type taxonomy
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_taxonomy
  * @cpt Publications
  */

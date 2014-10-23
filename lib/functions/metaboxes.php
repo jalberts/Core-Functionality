@@ -14,28 +14,82 @@
  * @license      GPL2 http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
-/**
- * Create Metaboxes
- * @since 0.1.0
- * @author Joe Alberts <jra@umich.edu>
- * 
- * @cpt Custom Post Type name
- */
-
 //-- For examples, see examples/metaboxes.php
 
 /**
- * Initialize Metabox Class
+ * Create Metaboxes
+ * @author Joe Alberts <jra@umich.edu>
  * @since 1.0.1
- * see /lib/metabox/example-functions.php for more information
- *
- * This is not working with the humanmade fork. Investigate further later.
- * Currently initialized in the main plugin file.
+ * @cpt Directory
  */
 
-//function jra_initialize_cmb_meta_boxes() {
-	//if ( ! class_exists( 'cmb_Meta_Box' ) ) {
-		//require_once( JRA_DIR . '/lib/metabox/custom-meta-boxes.php' );
-	//}
-//}
-//add_action( 'init', 'jra_initialize_cmb_meta_boxes', 9999 );
+function cmb_directory_metaboxes( array $meta_boxes ) {
+
+        $prefix = '_cmcd_directory-';
+
+// Personal (Bio) Info fields
+        $bio_fields = array(
+                array(
+                        'id' => $prefix . 'pic',
+                        'name' => 'Picture',
+                        'type' => 'image',
+                        'cols' => 3
+                ),
+                array(
+                        'id' => $prefix . 'title',
+                        'name' => 'Title(s)',
+                        'type' => 'text',
+                        'repeatable' => true,
+                        'cols' => 9
+                        ),
+                array(
+                        'id' => $prefix . 'link',
+                        'name' => 'Bio Link',
+                        'type' => 'text_url',
+                        'cols' => 3
+                ),
+                array(
+                        'id' => $prefix . 'email',
+                        'name' => 'Email',
+                        'type' => 'text',
+                        'cols' => 3
+                ),
+                array(
+                        'id' => $prefix . 'phone',
+                        'name' => 'Phone',
+                        'type' => 'text',
+                        'cols' => 3
+                ),
+                array(
+                        'id' => $prefix . 'office',
+                        'name' => 'Office #',
+                        'type' => 'text_small',
+                        'cols' => 3
+                ),
+				array(
+					'id' => $prefix . 'about',
+					'name' => 'About',
+					'desc' => 'Extra detail about the individual',
+					'type' => 'wysiwyg',
+					'options' => array(
+						'teeny' => true,
+						'media_buttons' => false,
+						'textarea_rows' => 5,
+						'tinymce' => array(
+							'theme_advanced_buttons1' => 'formatselect,|,bold,italic,underline,blockquote,|,bullist,numlist,|,justifyleft,justifycenter,justifyright,|,undo,redo,|,link,unlink,|,fullscreen,|',
+						),
+					),
+				),
+        );
+
+        // Metabox declaration
+        $meta_boxes[] = array(
+                'title' => 'Personal Info',
+                'pages' => 'directory',
+                'fields' => $bio_fields
+        );
+
+return $meta_boxes;
+
+}
+add_filter( 'cmb_meta_boxes', 'cmb_directory_metaboxes' );

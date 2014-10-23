@@ -5,7 +5,7 @@
  * This file registers any custom post types
  *
  * @package      Core_Functionality
- * @since        1.0.1
+ * @since        0.1.0
  * @link         https://github.com/jalberts/Core-Functionality
  * @author       Joe Alberts <jra@umich.edu>
  * @copyright    Copyright (c) 2013, Joe Alberts
@@ -15,7 +15,7 @@
 /** 
  * Create Programs post type
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  */
 
@@ -115,7 +115,7 @@ function jra_programs_remove_metaboxes() {
 /** 
  * Create Directory post type
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  */
 
@@ -215,7 +215,7 @@ add_action( 'do_meta_boxes', 'jra_directory_remove_metaboxes' );
 /** 
  * Create Publications post type
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  *
  * Removed to avoid confusion until it can be fully implemented.

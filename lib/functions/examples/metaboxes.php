@@ -14,9 +14,8 @@
 
 /**
  * Create Metaboxes
- * @since 1.0.1
+ * @since 0.1.0
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
  * @cpt Programs
  */
 
@@ -216,7 +215,7 @@ add_filter( 'cmb_meta_boxes', 'cmb_programs_metaboxes' );
 /**
  * Create Metaboxes
  * @author Joe Alberts <jra@umich.edu>
- * @since 1.0.1
+ * @since 0.1.0
  * @cpt Directory
  */
 
