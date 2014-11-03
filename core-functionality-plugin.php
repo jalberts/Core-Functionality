@@ -57,7 +57,7 @@ include_once( JRA_DIR . '/lib/functions/general.php' );
 function jra_corefunctionality_activate() {
 	flush_rewrite_rules();
 }
-register_activation_hook( JRA_DIR, 'jra_corefunctionality_activate' );
+register_activation_hook( __FILE__, 'jra_corefunctionality_activate' );
 
 function jra_corefunctionality_deactivate() {
 	flush_rewrite_rules();
