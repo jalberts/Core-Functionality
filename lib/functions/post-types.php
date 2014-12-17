@@ -3,7 +3,8 @@
 /**
  * Post Types
  *
- * This file registers any custom post types
+ * This file registers any custom post types, and customizes several elements of 
+ * the registered CPTs.
  *
  * @package      Core-Functionality
  * @since        0.1.0
@@ -107,3 +108,25 @@ function jra_people_title_text( $title) {
 	return $title;
 }
 add_filter( 'enter_title_here', 'jra_people_title_text' );
+
+/**
+ * Create columns for registered CPTs in admin.
+ *
+ * @since: 0.1.0
+ */
+
+add_filter( 'manage_posts_columns', 'jra_manage_cpt_columns', 10, 2 );
+function jra_manage_cpt_columns( $columns, $post_type ) {
+   switch ( $post_type ) {
+      case 'people':
+         $new_columns = array();
+         foreach( $columns as $key => $value ) {
+            $new_columns[ $key ] = $value;
+            if ( $key == 'title' )
+               $new_columns[ '_prc_people-email' ] = 'Email';
+         }
+         return $new_columns;
+   }
+   return $columns;
+}
+ 
