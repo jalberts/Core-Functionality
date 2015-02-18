@@ -80,6 +80,20 @@ function cmb_people_metaboxes( array $meta_boxes ) {
 						),
 					),
 				),
+				array(
+					'id' => $prefix . 'publications',
+					'name' => 'Publications',
+					'desc' => 'Enter a Zotpress shortcode to list publications for this individual',
+					'type' => 'wysiwyg',
+					'options' => array(
+						'teeny' => true,
+						'media_buttons' => false,
+						'textarea_rows' => 5,
+						'tinymce' => array(
+							'theme_advanced_buttons1' => 'formatselect,|,bold,italic,underline,blockquote,|,bullist,numlist,|,justifyleft,justifycenter,justifyright,|,undo,redo,|,link,unlink,|,fullscreen,|',
+						),
+					),
+				),
         );
 
         // Metabox declaration
