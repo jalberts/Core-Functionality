@@ -15,7 +15,7 @@
     "url": "https://github.com/humanmade/Custom-Meta-Boxes/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-cssmin": "~0.7.0"
+    "grunt": ">=1.3.0",
+    "grunt-contrib-cssmin": "~4.0.0"
   }
 }
